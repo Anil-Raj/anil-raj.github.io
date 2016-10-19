@@ -12,7 +12,7 @@ $("body").touchmove(function(e) {
   var relativeY = (e.pageY - offset.top);
 
   //alert("X: " + relativeX + "  Y: " + relativeY);
-  TweenLite.to($("#toolbox"),0.2,{x:e.pageX-90,y:e.pageY-70});
+  TweenLite.to($("#toolbox"),0,{x:e.pageX-90,y:e.pageY-70});
 });
 });
 //document.addEventListener("DOMContentLoaded",function(){
