@@ -5,7 +5,7 @@ function startTween(){
 	TweenLite.to($("#toolbox"),1,{x:250,y:250});
 }
 $(function() {
-$("body").mousemove(function(e) {
+$("body").touchmove(function(e) {
 
   var offset = $(this).offset();
   var relativeX = (e.pageX - offset.left);
