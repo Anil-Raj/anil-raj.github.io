@@ -29,6 +29,18 @@ $(document).ready(function(){
     click: function(){
         $(this).css("background-color", "yellow");
     } 
+    $(document).ready(function(){
+    $("#hide").click(function(){
+        $("HideAndShow").hide();
+        $(this).hide();
+        $("#show").show();
+    });
+    $("#show").click(function(){
+        $("HideAndShow").show();
+         $(this).hide();
+        $("#hide").show();
+    });
+});
 });	
 });
 </script>
@@ -46,6 +58,12 @@ $(document).ready(function(){
 <p id="p1"> Enter this paragraph.</p>
 
 <p id="p2">Multiple Event Handlers are attached</p>
+
+<p id="HideAndShow">If you click on the "Hide" button, I will disappear.</p>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+
 
 <h4>focus()</h4>
 Name: <input type="text" name="fullname"><br>
