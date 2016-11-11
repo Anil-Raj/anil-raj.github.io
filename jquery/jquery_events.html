@@ -13,8 +13,11 @@ $(document).ready(function(){
        $("#p1").mouseenter(function(){
         alert("You entered p1!");
     });
-       $("input").focus(function(){
-    $(this).css("background-color", "#cccccc");
+    $("input").focus(function(){
+    	$(this).css("background-color", "#cccccc");
+    $("input").blur(function(){
+    	$(this).css("background-color", "#ffffff");
+});
 });
 });
 </script>
