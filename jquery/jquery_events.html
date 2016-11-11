@@ -13,6 +13,9 @@ $(document).ready(function(){
        $("#p1").mouseenter(function(){
         alert("You entered p1!");
     });
+       $("input").focus(function(){
+    $(this).css("background-color", "#cccccc");
+});
 });
 </script>
 </head>
@@ -27,5 +30,9 @@ $(document).ready(function(){
 <div>double Click me too!</div>
 
 <p id="p1"> Enter this paragraph.</p>
+
+<h4>focus()</h4>
+Name: <input type="text" name="fullname"><br>
+Email: <input type="text" name="email">
 </body>
 </html>
