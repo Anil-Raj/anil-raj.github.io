@@ -10,15 +10,26 @@ $(document).ready(function(){
     $("div").dblclick(function(){
     	$(this).hide();
     });
-       $("#p1").mouseenter(function(){
+    $("#p1").mouseenter(function(){
         alert("You entered p1!");
     });
     $("input").focus(function(){
     	$(this).css("background-color", "#cccccc");
+    });
     $("input").blur(function(){
     	$(this).css("background-color", "#ffffff");
-});
-});
+	});
+	$("#p2").on({
+    mouseenter: function(){
+        $(this).css("background-color", "lightgray");
+    }, 
+    mouseleave: function(){
+        $(this).css("background-color", "lightblue");
+    }, 
+    click: function(){
+        $(this).css("background-color", "yellow");
+    } 
+});	
 });
 </script>
 </head>
@@ -33,6 +44,8 @@ $(document).ready(function(){
 <div>double Click me too!</div>
 
 <p id="p1"> Enter this paragraph.</p>
+
+<p id="p2">Multiple Event Handlers are attached</p>
 
 <h4>focus()</h4>
 Name: <input type="text" name="fullname"><br>
