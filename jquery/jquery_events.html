@@ -20,26 +20,22 @@ $(document).ready(function(){
     	$(this).css("background-color", "#ffffff");
 	});
 	$("#p2").on({
-    mouseenter: function(){
-        $(this).css("background-color", "lightgray");
-    }, 
-    mouseleave: function(){
-        $(this).css("background-color", "lightblue");
-    }, 
-    click: function(){
-        $(this).css("background-color", "yellow");
-    } 
-    $(document).ready(function(){
+    	mouseenter: function(){
+      	  $(this).css("background-color", "lightgray");
+    	}, 
+    	mouseleave: function(){
+	        $(this).css("background-color", "lightblue");
+	    }, 
+    	click: function(){
+	        $(this).css("background-color", "yellow");
+    	} 
+    });
     $("#hide").click(function(){
         $("#HideAndShow").hide();
-        
     });
     $("#show").click(function(){
-        $("#HideAndShow").show();
-        
-    });
-});
-});	
+        $("#HideAndShow").show();    
+	});	
 });
 </script>
 </head>
