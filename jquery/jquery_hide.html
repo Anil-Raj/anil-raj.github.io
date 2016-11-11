@@ -10,6 +10,9 @@ $(document).ready(function(){
     $("div").dblclick(function(){
     	$(this).hide();
     });
+       $("#p1").mouseenter(function(){
+        alert("You entered p1!");
+    });
 });
 </script>
 </head>
@@ -23,5 +26,6 @@ $(document).ready(function(){
 <div>double Click me away!</div>
 <div>double Click me too!</div>
 
+<p id="p1"> Enter this paragraph.</p>
 </body>
 </html>
