@@ -1,0 +1,104 @@
+<html>
+<head>
+<style>
+.tooltip {
+	display: inline;
+	position: relative;
+	z-index: 999;
+}
+
+/* Trigger text */
+
+.tooltip-item {
+	background: rgba(0,0,0,0.3);
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 700;
+	padding: 0 10px;
+}
+
+
+.tooltip:hover .tooltip-item::after {
+	pointer-events: auto;
+}
+
+/* Tooltip */
+
+.tooltip-content {
+	position: absolute;
+	margin: 0 0 20px -40px;
+	bottom: 100%;
+	text-align: left;
+	font-size: 0.765em;
+	line-height: 1.4;
+	box-shadow: -5px -5px 15px rgba(48,54,61,0.2);
+	background: #2a3035;
+	opacity: 0;
+	cursor: default;
+	pointer-events: none;
+}
+.tooltip:hover .tooltip-content {
+	pointer-events: auto;
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0) rotate3d(0,0,0,0);
+	transform: translate3d(0,0,0) rotate3d(0,0,0,0);
+}
+
+/* Arrow */
+
+.tooltip-content::after {
+	content: '';
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: transparent;
+	border-top-color: #2a3035;
+	border-width: 10px;
+	margin-left: -10px;
+}
+.tooltip-text {
+	font-size: 2em;
+	line-height: 1.35;
+	display: block;
+	padding: 1.31em 1.21em 1.21em 0;
+	color: #fff;
+}
+</style>
+</head>
+<body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>zjjhajasjshfgjshgfkjshgfjkshgf
+<span class="tooltip tooltip-effect-1">
+    <span class="tooltip-item">Euclid</span>
+    <span class="tooltip-content clearfix">
+        <span class="tooltip-text">
+             <strong>Euclid</strong>zbjcdbvjazshdfalks askdfh asugausgaus
+            <a href="http://en.wikipedia.org/wiki/Euclid">Wikipedia</a>
+         </span>
+     </span>
+</span>
+<span class="tooltip tooltip-effect-1">
+    <span class="tooltip-item">Euclid</span>
+    <span class="tooltip-content clearfix">
+        <span class="tooltip-text">
+             <strong>Euclid</strong>
+            <a href="http://en.wikipedia.org/wiki/Euclid">Wikipedia</a>
+         </span>
+     </span>
+</span>
+</body>
+</html>
