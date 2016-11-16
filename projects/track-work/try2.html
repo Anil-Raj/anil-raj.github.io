@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<style>
+#svgThree{
+     width: 30px;
+    float:left;
+}
+#svgTwo{
+    float:left;
+}
+.border-gray-dark {
+    display:flex;
+}
+#svgOne{
+    //flex: 1;
+    float:left;
+}
+</style>
 </head>
 <body>
 <input type="file" id="selectFiles" value="Import" /><br />
 <button id="import">Import Data</button>
-  <button onclick="draw_chart()">Draw</button>
+  <button onclick="draw_grid()">Draw</button>
 
-<div class="mb-5 border border-gray-dark rounded-1 py-2">
-<div class="js-calendar-graph is-graph-loading graph-canvas calendar-graph height-full" data-graph-url="/users/Anil-Raj/contributions" data-url="/Anil-Raj" data-from="2016-10-31" data-to="2016-11-14">
+<div class="border-gray-dark ">
+
+<!--<svg id="svgTwo" xmlns="http://www.w3.org/2000/svg" width="700" height="20"  > 
+</svg>-->
+<!--<svg id="svgThree" xmlns="http://www.w3.org/2000/svg" width="32" height="104"  > 
+</svg>-->
+
 <svg id="svgOne" xmlns="http://www.w3.org/2000/svg" width="700" height="150"  class="js-calendar-graph-svg"> 
-<svg id="svgTwo" xmlns="http://www.w3.org/2000/svg" width="700" height="20"  > 
 </svg>
-
+</div>
 <script type="text/javascript">
 Date.prototype.addDays = function(days) {
        var dat = new Date(this.valueOf())
@@ -49,6 +69,10 @@ Date.prototype.yyyymmdd = function() {
   var dd = this.getDate();
   return [this.getFullYear(),  n(mm),  n(dd)].join('/'); // padding
 };
+function mmToMmm(mm) {
+    var m_names = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+    return m_names[mm];
+};
 function getContributionCout(d){
   var data = localStorage.getItem('contribution-data');
   obj = JSON.parse(data);
@@ -71,7 +95,43 @@ document.getElementById('import').onclick = function() {
   }
   fr.readAsText(files.item(0));
 };
+function draw_month(){
+   var svgns = "http://www.w3.org/2000/svg";
+   var g = document.createElementNS(svgns,'g');
+   var today = new Date();
+   mm = today.getMonth();
+   for (var x=0 ; x < 12; x += 1 ) {
+       x_pos = x*60;
+       var text = document.createElementNS(svgns, 'text');
+       text.setAttribute('x', x_pos);
+       text.setAttribute('y', '15');
+       text.setAttribute('fill', '#000');
+       text.textContent = mmToMmm((mm+x)%11);
+       console.log(x_pos+" "+mmToMmm((mm+x)%11));
+       g.appendChild(text);
+    }
+      document.getElementById('svgOne').appendChild(g);
 
+  
+}
+function draw_week(){
+   var svgns = "http://www.w3.org/2000/svg";
+   var g = document.createElementNS(svgns,'g');
+   var today = new Date();
+   mm = today.getMonth();
+   for (var y=1 ; y <=3 ; y += 1 ) {
+       y_pos = y*24+20;
+       var text = document.createElementNS(svgns, 'text');
+       text.setAttribute('x', 0);
+       text.setAttribute('y', y_pos);
+       text.setAttribute('fill', '#000');
+       text.textContent = "Mon";
+       g.appendChild(text);
+    }
+      document.getElementById('svgThree').appendChild(g);
+
+  
+}
 function draw_scale(){
     var svgns = "http://www.w3.org/2000/svg";
     var g = document.createElementNS(svgns,'g');
@@ -108,6 +168,7 @@ function draw_scale(){
 function draw_chart(){
     var today = new Date();
     var startDate = new Date(today.getFullYear()-1,today.getMonth(),today.getDate());
+   // var endDate = new Date(today.getFullYear(),today.getMonth(),today.getDate());
     var x_pos;
     var y_pos;
     var svgns = "http://www.w3.org/2000/svg";
@@ -117,7 +178,7 @@ function draw_chart(){
     var g = document.createElementNS(svgns,'g');
     g.setAttributeNS(null,'transform','translate('+x+', 0)');
     x_pos=x*12;
-    for (var y = 0; y < 84 ; y += 12) {
+    for (var y = 20; y < 104 ; y += 12) {
         if(currentDate <= today){  
             var contributionCout = getContributionCout(currentDate.yyyymmdd())
             var rect = document.createElementNS(svgns, 'rect');
@@ -136,8 +197,13 @@ function draw_chart(){
         }
     }
     document.getElementById('svgOne').appendChild(g);
-    draw_scale();
     }
+}
+function draw_grid(){
+    draw_month();
+    //draw_week();
+    draw_chart();
+    draw_scale();
 }
 </script>
 </body>
