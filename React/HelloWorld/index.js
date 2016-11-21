@@ -1,7 +1,7 @@
 function LikeImage(props){
 	return(
 	<div id="rg_fbl">
-	<h3>{props.likes}</h3>
+	<h3 style="inli">{props.likes}</h3>
 	<img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Facebook_like_thumb.png" height="42" width="42"/>
 	</div>
 	);
@@ -29,7 +29,7 @@ function ImageGrid(props) {
 	);
 }
 const image1 ={
-	url:"https://lh5.googleusercontent.com/Z8IaUqc1i2OPFXzyBynk6-KyKipgSSAodoe6ckrbnuD0JzSNp3s9kogEG5w18A-ha4pdO8rAlfuOOB4=w1366-h638-rw",
+	url:"https://drive.google.com/open?id=0B6CjWncEp8EyU1dFUndlZTJMcTA",
 	description:"Chrysanthemum.jpg",
 	likes:10,
 	dislikes:20
