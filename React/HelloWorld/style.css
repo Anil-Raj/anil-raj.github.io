@@ -1,0 +1,30 @@
+element.style {
+}
+a:link, .w, .q:active, .q:visited {
+    cursor: pointer;
+}
+.mblink:visited, a:visited {
+    color: #609;
+}
+a:link, .w, #prs a:visited, #prs a:active, .q:active, .q:visited, .kl:active, .tbotu {
+    color: #1a0dab;
+}
+#rg {
+    border: 1px solid #f1f1f1;
+    display: inline-block;
+    margin: 0 32px 0 32px;
+    padding: 7px 7px 0 7px;
+}
+#rg_fbl {
+    border: 1px solid #f1f1f1;
+    display: inline-block;
+    margin: 0 0 0 0;
+    padding: 7px 7px 0 7px;
+}
+#rg_fbdl {
+	float: right;
+    border: 1px solid #f1f1f1;
+    display: inline-block;
+    margin: 0 0 0 0;
+    padding: 7px 7px 0 7px;
+}
