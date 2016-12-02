@@ -17,7 +17,7 @@ class Books extends Component {
       this.setState({
         books: results.data
       })
-      console.log(this.state.books)
+      //console.log(this.state.books)
     })
   };
 
@@ -29,8 +29,8 @@ class Books extends Component {
           <div className="row">
             {
             this.state.books.map(book => {
-              console.log(book)
-            return <Book name={book} author="AUTHOR"id={1} />
+              console.log(book.Name)
+            return <Book name={book.Name} author={book.Author} cover={book.BookCover}key={book.Id} />
             })
           }
              
