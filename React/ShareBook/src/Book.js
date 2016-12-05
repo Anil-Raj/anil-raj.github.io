@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 let Book = function(props) {
   return (
@@ -8,8 +9,8 @@ let Book = function(props) {
         		<img className="img-responsive" src={props.cover} alt=""/>
             	<div className="overlay">
             		<h2>{props.name}</h2>
-                	<p> 
-	                	<a href="#">{props.author}</a>
+                	<p> <Link to={'/detail/' + props.id}>{props.author}</Link>
+	                	<a href="/detail">{props.author}</a>
                 	</p> 
             	</div>
         	</div>

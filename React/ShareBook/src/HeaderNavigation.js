@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router'
 import './App.css';
 
 class Nav extends Component {
@@ -11,8 +12,9 @@ class Nav extends Component {
       				<a className="navbar-brand" href="#">WebSiteName</a>
     			</div>
     			<ul className="nav navbar-nav">
-      				<li className="active"><a href="#">Home</a></li>
-      				<li><a href="#">Page 1</a></li>
+          <li><Link to={'/'}>Home</Link></li>
+          <li><Link to={'/1'}>Page 1</Link></li>
+      				
       				<li><a href="#">Page 2</a></li> 
       				<li><a href="#">Page 3</a></li> 
     			</ul>

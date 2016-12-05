@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import HeaderNavigation from './HeaderNavigation';
 import { getBooks } from './xhr'
 import Book from './Book'
 import './App.css';
@@ -21,16 +20,14 @@ class Books extends Component {
     })
   };
 
-  render() {
+  render(props) {
     return (
       <div className="Books">
-        <HeaderNavigation />
         <div className="container">
           <div className="row">
             {
             this.state.books.map(book => {
-              console.log(book.Name)
-            return <Book name={book.Name} author={book.Author} cover={book.BookCover}key={book.Id} />
+            return <Book name={book.Name} author={book.Author} cover={book.BookCover} key={book.Id} id={book.Id} />
             })
           }
              
