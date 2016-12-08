@@ -1,37 +1,22 @@
-<!doctype html>
-<html lang="en">
+
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>jQuery UI Droppable - Default functionality</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <style>
-  #draggable {top:50%;left:50%; width: 150px; height: 150px; padding: 0.5em;margin: 10px 10px 10px 0; }
-  </style>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#draggable" ).draggable({
-      axis: "x",
-      drag: function( event, ui ) {
-        $(this).mouseup(function() {
-           if(Math.abs(ui.originalPosition.left - ui.position.left)>100){
-                
-            } 
-            console.log(ui.originalPosition.left > ui.position.left ?  'succesfully disliked the image:'+$('img',this).attr('src') : 'succesfully liked the image'+$('img',this).attr('src'));
-            $(this).remove();      
-        });
-      }
-    });
-  });
-  </script>
+	<script src="//twemoji.maxcdn.com/twemoji.min.js"></script>
 </head>
 <body>
-
-<div id="draggable" class="ui-widget-content" style="position: absolute; color: White; top: 50%; left: 45%;">
-	<img src="http://nikonrumors.com/wp-content/uploads/2014/03/Nikon-1-V3-sample-photo-550x366.jpg" style="height:100px"/>
-  <p>Drag me to my target</p>
-</div>
+<a href="/fancyInput">fancyInput</a>
+<a href="/GSAP">GSAP</a>
+<a href="/jquery">jquery</a>
+<a href="/mycareer">mycareer</a>
+<a href="/projects">projects</a>
+<a href="/React">React</a>
+<a href="/react-native">react-native</a>
+<a href="/samples">samples</a>
+	<a href="/ImageLDL/v1">indeimagex</a>
+<a href="/somepoints.html">Becoming Good Consultant</a>
+<a href="/LearnCSharp/index.html">LearnCSharp</a>
+<script type="text/javascript">
+	twemoji.parse('I \u2764\uFE0F emoji!');
+</script>
 </body>
 </html>
