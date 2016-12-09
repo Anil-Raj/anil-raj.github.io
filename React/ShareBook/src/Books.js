@@ -20,7 +20,7 @@ class Books extends Component {
     })
   };
 
-  render(props) {
+  render() {
     return (
       <div className="Books">
         <div className="container">

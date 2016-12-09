@@ -1,6 +1,5 @@
 function CallWebAPI()
 {
-	 var responseContainer = document.getElementById('response');
 	 var request = new XMLHttpRequest();
 	 var num = Math.floor((Math.random() * 10) )%4 + 8;
 	 request.open("get", "http://192.168.160.124:29607/ImageLDL/?Id="+num, false);
