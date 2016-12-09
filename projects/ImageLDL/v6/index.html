@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Material Tabs with UI-Router</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet prefetch' href='http://rawgit.com/angular/bower-material/master/angular-material.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body ng-app="dsntApp" >
+
+<div ng-controller="tabCtrl"
+     layout="column" class="demo" >
+  <md-content class="md-padding">
+    <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+      <md-nav-item md-nav-href="#/" name="home">Home</md-nav-item>
+      <md-nav-item md-nav-href="#/randomImages" name="randomImages">Random Images</md-nav-item>
+      <md-nav-item md-nav-click="goto('page2')" name="page2">Page Two</md-nav-item>
+      <md-nav-item md-nav-click="goto('page3')" name="page3">Page Three</md-nav-item>
+      <!-- these require actual routing with ui-router or ng-route, so they won't work in the demo-->
+      <md-nav-item md-nav-sref="app.page4" name="page4">Page Four</md-nav-item>
+      
+      
+    </md-nav-bar>
+
+  <div id="content" ui-view flex> </div>
+
+</div>
+  <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.js'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular-animate.js'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular-aria.js'></script>
+<script src='http://rawgit.com/angular/bower-material/master/angular-material.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.min.js'></script>
+
+    <script src="js/index.js"></script>
+    
+</body>
+</html>

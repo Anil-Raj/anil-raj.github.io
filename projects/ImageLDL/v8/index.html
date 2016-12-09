@@ -1,0 +1,31 @@
+<link rel="shortcut icon" type="image/x-icon" href="/img/icon.jpg" />
+<title>
+</title>
+<head>
+    <script src="Scripts/angular/angular.js"></script>
+    <script src="Scripts/angular/angular-route.js"></script>
+    <script src="Scripts/angular/jQuery.js"></script>
+    <script src="Scripts/angular/ng-grid.js"></script>
+    <script src="Scripts/angular/ng-grid-flexible-height.js"></script>
+
+    <script src="app.js"></script>
+    <script src="randomImage.js"></script>
+
+
+</head>
+<body ng-app="app">
+
+    <div id="header" ng-controller="mainCtrl">
+        <ul class="topnav">
+            <li >
+                <a href="home"><span style="font-size:1vmax; font-weight:bold; color:steelblue;">Home</span></a>
+            </li>
+            <li >
+                <a href="randomImages"><span style="font-size:1vmax; font-weight:bold; color:steelblue;">Random Images</span></a>
+            </li>        
+        </ul>
+    </div>
+
+    <div ng-view></div>
+
+</body>

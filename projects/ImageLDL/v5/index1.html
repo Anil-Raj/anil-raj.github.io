@@ -1,0 +1,83 @@
+<html lang="en" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+  <style type="text/css">
+  
+.intro {
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    width: 600px;
+    height: 20px;
+    font-size : 12px;
+}
+
+.demo {
+    position: relative;
+    width: 600px;
+    height: 300px;
+    background-color: #cccccc;
+    margin-top: 40px;
+    margin-left: 0px;
+}
+
+.demo #content {
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    font-weight: 600;
+    border: 1px solid #999999;
+    border-top: none;
+}
+
+  </style>
+</head>
+<body>
+<div class="intro">
+  This demonstration shows how Angular-Material Tabs can be used with Angular-UI-Router
+<div>
+  
+<div ng-app="dsntApp" 
+     ng-controller="tabCtrl"
+     layout="column" class="demo" >
+
+  <script type="text/ng-template" id="partials/view1.html">  Tab #1 </script>
+  <script type="text/ng-template" id="partials/view2.html">  Tab #2 </script>
+  <script type="text/ng-template" id="partials/view3.html">  Tab #3 </script>
+  <md-toolbar>
+    <h2 class="md-toolbar-tools">
+      <span>Toolbar</span>
+    </h2>
+  </md-toolbar>
+  <md-tabs md-stretch-tabs 
+           md-selected="selectedIndex">
+     <md-tab label="tab1"></md-tab> 
+     <md-tab label="tab2"></md-tab>
+     <md-tab label="tab3"></md-tab>  
+  </md-tabs>
+
+  <div id="content" ui-view flex> </div>
+
+</div>
+
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+  
+  <!-- Your application bootstrap  -->
+ <script type="text/javascript" src="js/app2.js"></script>
+  
+</body>
+</html>
+
+<!--
+Copyright 2016 Google Inc. All Rights Reserved. 
+Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
+-->
