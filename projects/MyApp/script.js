@@ -41,7 +41,7 @@
 			var draggable_element = document.createElement("div");
 			draggable_element.setAttribute("id", "draggable-element");
 			draggable_element.setAttribute("class", "ui-widget-content");
-			draggable_element.setAttribute("style", "position: absolute; color: White; top: 35%; left: 30%;");
+			draggable_element.setAttribute("style", "position: absolute; color: White; top: 35%; left: 450px;");
 			document.getElementById("contact_content").appendChild(draggable_element);
 			//console.log(draggable_element);
 			return draggable_element;
@@ -83,7 +83,7 @@
 		    }
 		}
 		function _move_elem_to_original_pos() {
-		    document.getElementById("draggable-element").style.left = '250px';
+		    document.getElementById("draggable-element").style.left = '450px';
 		}
 
 		function LoadNewImageWithController(){
