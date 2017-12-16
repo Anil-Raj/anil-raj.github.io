@@ -138,7 +138,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"text-align:center\">\n<h1>{{title}}</h1>\n   <router-outlet></router-outlet> \n  <!-- \n  Left and right controls -->\n</div>\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<!--component html goes here -->\n   <!--<a routerLink=\"/bot\">Bot</a>\n   <a routerLink=\"/about\">About</a>-->\n   <div data-rsssl=\"1\" class=\"page-template page-template-portfolio-new page-template-portfolio-new-php page page-id-4076\"><div class=\"header-wrapper\">\n   <header class=\"header center clearfix\" role=\"banner\">            \n       <div style=\"text-align:center\">\n           <h1>Anil Raj</h1>\n       <div class=\"menu-mb closed\"></div>\n       <nav class=\"headnav\" role=\"navigation\">\n           <ul>\n                <li id=\"menu-item-2902\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-2902\">\n                   <a href=\"/\">Home</a>\n                </li>\n                <li id=\"menu-item-2901\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-2901\">\n                    <a href=\"/about\">About</a>\n                </li>\n                <li id=\"menu-item-4292\" class=\"menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-4076  menu-item-4292\">\n                    <a href=\"/bot\">Bot</a>\n                </li>\n                <li id=\"menu-item-2997\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-2997\">\n                    <a href=\"https://www.jayhafling.com/wordpress-designer/\">WordPress Designer</a>\n                </li>\n                <li id=\"menu-item-2899\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-2899\">\n                    <a href=\"https://www.jayhafling.com/contacts/\">Contacts</a>\n                </li>\n            </ul>\n        </nav>\n        </div>\n    </header>\n    </div>\n   </div>\n   <router-outlet></router-outlet> \n  <!-- \n  Left and right controls -->\n\n"
 
 /***/ }),
 
@@ -283,7 +283,7 @@ var Bot1Component = (function () {
 /***/ "../../../../../src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--component html goes here -->\n   <a routerLink=\"/bot\">Bot</a>\n   <a routerLink=\"/about\">About</a>"
+module.exports = "<!--component html goes here -->\n   <a routerLink=\"/bot\">Bot</a>\n   <a routerLink=\"/about\">About</a>\n   <body data-rsssl=\"1\" class=\"page-template page-template-portfolio-new page-template-portfolio-new-php page page-id-4076\"><div class=\"header-wrapper\">\n   <header class=\"header center clearfix\" role=\"banner\"> \n               \n       <div style=\"text-align:center\">\n           <h1>Anil Raj</h1>\n       <div class=\"menu-mb closed\"></div>\n       <nav class=\"headnav\" role=\"navigation\">\n           <ul>\n                <li id=\"menu-item-2902\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-2902\">\n                   <a href=\"/\">Home</a>\n                </li>\n                <li id=\"menu-item-2901\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-2901\">\n                    <a href=\"/about\">About</a>\n                </li>\n                <li id=\"menu-item-4292\" class=\"menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-4076 current_page_item menu-item-4292\">\n                    <a href=\"https://www.jayhafling.com/portfolio/\">Portfolio</a>\n                </li>\n                <li id=\"menu-item-2997\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-2997\">\n                    <a href=\"https://www.jayhafling.com/wordpress-designer/\">WordPress Designer</a>\n                </li>\n                <li id=\"menu-item-2899\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-2899\">\n                    <a href=\"https://www.jayhafling.com/contacts/\">Contacts</a>\n                </li>\n            </ul>\n        </nav>\n        </div>\n    </header>\n    </div>\n   </body>"
 
 /***/ }),
 
@@ -295,7 +295,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "h1 {\n  color: #369;\n  font-family: Arial, Helvetica, sans-serif;\n  font-size: 250%; }\n", ""]);
 
 // exports
 
