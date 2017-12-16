@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+</head>
+<body>
+
+<svg id="svgOne" xmlns="http://www.w3.org/2000/svg" width="5000" height="3000"> 
+            <rect x="50" y="50"
+            width="50" height="50"
+            fill="blue" 
+            />
+<script type="text/javascript">
+var svgns = "http://www.w3.org/2000/svg";
+for (var x = 0; x < 5000; x += 50) {
+    for (var y = 0; y < 3000; y += 50) {
+        var rect = document.createElementNS(svgns, 'rect');
+        rect.setAttributeNS(null, 'x', x);
+        rect.setAttributeNS(null, 'y', y);
+        rect.setAttributeNS(null, 'height', '50');
+        rect.setAttributeNS(null, 'width', '50');
+        rect.setAttributeNS(null, 'fill', '#'+Math.round(0xffffff * Math.random()).toString(16));
+        document.getElementById('svgOne').appendChild(rect);
+    }
+}
+</script>
+</svg>
+</body>
+</html> 

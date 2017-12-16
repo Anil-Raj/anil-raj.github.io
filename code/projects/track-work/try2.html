@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+#svgThree{
+     width: 30px;
+    float:left;
+}
+#svgTwo{
+    float:left;
+}
+.border-gray-dark {
+    display:flex;
+}
+#svgOne{
+    //flex: 1;
+    float:left;
+}
+</style>
+</head>
+<body>
+<input type="file" id="selectFiles" value="Import" /><br />
+<button id="import">Import Data</button>
+  <button onclick="draw_grid()">Draw</button>
+
+<div class="border-gray-dark ">
+
+<!--<svg id="svgTwo" xmlns="http://www.w3.org/2000/svg" width="700" height="20"  > 
+</svg>-->
+<!--<svg id="svgThree" xmlns="http://www.w3.org/2000/svg" width="32" height="104"  > 
+</svg>-->
+
+<svg id="svgOne" xmlns="http://www.w3.org/2000/svg" width="700" height="150"  class="js-calendar-graph-svg"> 
+</svg>
+</div>
+<script type="text/javascript">
+Date.prototype.addDays = function(days) {
+       var dat = new Date(this.valueOf())
+       dat.setDate(dat.getDate() + days);
+       return dat;
+}
+function getColor(c){
+ switch(c) {
+    case 0:
+        return "#e3f2fd";
+    case 1:
+        return "#bbdefb";
+    case 2:
+        return "#64b5f6";
+    case 3:
+        return "#2196f3";
+    case 4:
+        return "#1e88e5";
+    case 5:
+        return "#1976d2";
+    case 6:
+        return "#1565c0";
+    case 7:
+        return "#0d47a1";
+    default: 
+        return "red";   
+}
+}
+function n(n){
+    return n > 9 ? "" + n: "0" + n;
+}
+Date.prototype.yyyymmdd = function() {
+  var mm = this.getMonth() + 1; // getMonth() is zero-based
+  var dd = this.getDate();
+  return [this.getFullYear(),  n(mm),  n(dd)].join('/'); // padding
+};
+function mmToMmm(mm) {
+    var m_names = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+    return m_names[mm];
+};
+function getContributionCout(d){
+  var data = localStorage.getItem('contribution-data');
+  obj = JSON.parse(data);
+  for(var i =0;i< obj.length;i++){
+    if(obj[i][0]==d){
+      return obj[i][1];
+    }
+  }
+}
+document.getElementById('import').onclick = function() {
+    var files = document.getElementById('selectFiles').files;
+  console.log(files);
+  if (files.length <= 0) {
+    return false;
+  }
+  var fr = new FileReader();
+  fr.onload = function(e) { 
+    var result = JSON.parse(e.target.result);
+    localStorage.setItem('contribution-data', JSON.stringify(result));
+  }
+  fr.readAsText(files.item(0));
+};
+function draw_month(){
+   var svgns = "http://www.w3.org/2000/svg";
+   var g = document.createElementNS(svgns,'g');
+   var today = new Date();
+   mm = today.getMonth();
+   for (var x=0 ; x < 12; x += 1 ) {
+       x_pos = x*60;
+       var text = document.createElementNS(svgns, 'text');
+       text.setAttribute('x', x_pos);
+       text.setAttribute('y', '15');
+       text.setAttribute('fill', '#000');
+       text.textContent = mmToMmm((mm+x)%11);
+       console.log(x_pos+" "+mmToMmm((mm+x)%11));
+       g.appendChild(text);
+    }
+      document.getElementById('svgOne').appendChild(g);
+
+  
+}
+function draw_week(){
+   var svgns = "http://www.w3.org/2000/svg";
+   var g = document.createElementNS(svgns,'g');
+   var today = new Date();
+   mm = today.getMonth();
+   for (var y=1 ; y <=3 ; y += 1 ) {
+       y_pos = y*24+20;
+       var text = document.createElementNS(svgns, 'text');
+       text.setAttribute('x', 0);
+       text.setAttribute('y', y_pos);
+       text.setAttribute('fill', '#000');
+       text.textContent = "Mon";
+       g.appendChild(text);
+    }
+      document.getElementById('svgThree').appendChild(g);
+
+  
+}
+function draw_scale(){
+    var svgns = "http://www.w3.org/2000/svg";
+    var g = document.createElementNS(svgns,'g');
+    g.setAttributeNS(null,'transform',' rotate(-90,550,120) ');
+    var colorNumber=0;
+    var y=120;
+    while (colorNumber<=7) {
+        var rect = document.createElementNS(svgns, 'rect');
+        rect.setAttributeNS(null, 'x', 550);
+        rect.setAttributeNS(null, 'y', y);
+        rect.setAttributeNS(null, 'height', '10');
+        rect.setAttributeNS(null, 'width', '10');
+        rect.setAttributeNS(null, 'fill', getColor(colorNumber));
+        g.appendChild(rect);
+        colorNumber+=1;
+        y+=12;
+    }
+    var gLow = document.createElementNS(svgns,'g');
+    var textLow = document.createElementNS(svgns, 'text');
+    textLow.setAttributeNS(null,"x", 500);
+    textLow.setAttributeNS(null,"y", 120);
+    textLow.textContent = "Low";
+    gLow.appendChild(textLow);
+    var gHigh = document.createElementNS(svgns,'g');
+    var textHigh = document.createElementNS(svgns, 'text');
+    textHigh.setAttributeNS(null,"x", 650);
+    textHigh.setAttributeNS(null,"y", 120);
+    textHigh.textContent = "High";
+    gHigh.appendChild(textHigh);
+    document.getElementById('svgOne').appendChild(gLow); 
+    document.getElementById('svgOne').appendChild(g);
+    document.getElementById('svgOne').appendChild(gHigh); 
+}
+function draw_chart(){
+    var today = new Date();
+    var startDate = new Date(today.getFullYear()-1,today.getMonth(),today.getDate());
+   // var endDate = new Date(today.getFullYear(),today.getMonth(),today.getDate());
+    var x_pos;
+    var y_pos;
+    var svgns = "http://www.w3.org/2000/svg";
+    var currentDate = startDate;
+    var x=0
+    for (var x=0 ; x < 53; x += 1 ) {
+    var g = document.createElementNS(svgns,'g');
+    g.setAttributeNS(null,'transform','translate('+x+', 0)');
+    x_pos=x*12;
+    for (var y = 20; y < 104 ; y += 12) {
+        if(currentDate <= today){  
+            var contributionCout = getContributionCout(currentDate.yyyymmdd())
+            var rect = document.createElementNS(svgns, 'rect');
+            rect.setAttributeNS(null, 'x', x_pos);
+            rect.setAttributeNS(null, 'y', y);
+            rect.setAttributeNS(null, 'height', '10');
+            rect.setAttributeNS(null, 'width', '10');
+            rect.setAttributeNS(null, 'fill', getColor(contributionCout));
+            rect.setAttributeNS(null, 'data-count',contributionCout); 
+            rect.setAttributeNS(null, 'data-date',currentDate.yyyymmdd());      
+            g.appendChild(rect);
+            currentDate = currentDate.addDays(1);  
+        }
+        else{
+            break;
+        }
+    }
+    document.getElementById('svgOne').appendChild(g);
+    }
+}
+function draw_grid(){
+    draw_month();
+    //draw_week();
+    draw_chart();
+    draw_scale();
+}
+</script>
+</body>
+</html>

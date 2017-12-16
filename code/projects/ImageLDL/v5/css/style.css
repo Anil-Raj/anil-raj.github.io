@@ -1,0 +1,13 @@
+.navBardemoBasicUsage md-content .ext-content {
+  padding: 50px;
+  margin: 20px;
+  background-color: #FFF2E0
+ }
+#draggable {top:50%;left:50%; width: 150px; height: 150px; padding: 0.5em;margin: 10px 10px 10px 0; }
+img {
+  width: 600px;
+  height: 450px;
+  background: url(loading.gif) 50% no-repeat;
+  border: 1px solid black;
+  border-radius: 5px;
+}
