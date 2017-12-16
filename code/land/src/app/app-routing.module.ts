@@ -11,7 +11,7 @@ import { AboutComponent } from './about/about.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'bot', component: Bot1Component },
   { path: 'about', component: AboutComponent },

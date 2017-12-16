@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './/app-routing.module';
 import { AppComponent } from './app.component';
-import { Bot1Component } from './bot1/bot1.component';
+import { Bot1Component} from './bot1/bot1.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutComponent } from './about/about.component';
 
@@ -12,13 +12,13 @@ import { AboutComponent } from './about/about.component';
 @NgModule({
   declarations: [
     AppComponent,
-    Bot1Component,
     DashboardComponent,
-    AboutComponent
+    AboutComponent,
+    Bot1Component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
