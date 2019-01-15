@@ -1,0 +1,7 @@
+.circle-width-text {
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    text-align: center;
+    display: flex;
+  }

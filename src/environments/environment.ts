@@ -3,7 +3,18 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  config: {
+    tenant: 'neudesic.onmicrosoft.com',
+    clientId: 'fa4cca2b-2838-4dcb-9498-a962c5d452d4',
+    endpoints: {
+      'https://graph.microsoft.com': '00000003-0000-0000-c000-000000000000'
+    },
+    navigateToLoginRequestUrl: false,
+    redirectUri: 'http://localhost:4200'
+
+
+  }
 };
 
 /*

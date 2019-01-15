@@ -1,0 +1,11 @@
+
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span>ADAL Example for Angular 6</span>
+        <div *ngIf="authenticated" (click)="logout()" >
+            <div class="circle-with-text">{{ user.profile.name | async}}</div>
+            <button mat-raised-button>Logout</button>
+          </div>
+    </mat-toolbar-row>
+    
+</mat-toolbar>
