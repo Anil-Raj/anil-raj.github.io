@@ -1,7 +1,96 @@
-.circle-width-text {
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    text-align: center;
-    display: flex;
-  }
+.circle-with-text {
+  background: rgb(38, 192, 161) none repeat scroll 0% 0%;
+  position: relative;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.initials {
+  background-color: rgba(255, 255, 255, 0);
+  top: 8px;
+  width: 25px;
+  position: absolute;
+  left: 2px;
+  font-family: "Roboto", Helvetica, Arial, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 11px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  letter-spacing: 0.42px;
+  line-height: 13px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.menu {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0);
+  right: calc(0% + 19px);
+  top: 16px;
+  height: 28px;
+  width: auto;
+  position: absolute;
+  z-index: 2;
+
+  outline: none;
+
+border: none;
+
+border-radius: 3px;
+
+white-space: nowrap;
+
+letter-spacing: .4px;
+
+-webkit-appearance: none;
+
+background: transparent;
+
+padding: 0;
+
+color: inherit;
+
+font-size: inherit;
+
+font-weight: inherit;
+}
+
+.user-modal {
+  position: absolute;
+  top: 60px;
+  left: auto;
+  right: 15px;
+  bottom: auto;
+  border: 0px none;
+  background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+  overflow: initial;
+  border-radius: 0px;
+  outline: currentcolor none medium;
+  padding: 0px;
+  box-shadow: rgba(62, 65, 81, 0.29) 0px 1px 7px 1px;
+
+border-radius: 4px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: transparent none repeat scroll 0% 0%;
+}
+
+.toolbar {
+  background: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+  border: 1px solid hsla(0, 0%, 59%, .02);
+}

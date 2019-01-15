@@ -10,9 +10,11 @@ import { Observable } from 'rxjs';
 })
 export class ToolbarComponent implements OnInit {
   user: Observable<adal.User>;
+  modalVisible: boolean;
 
   constructor(private adalService: AdalService, private router: Router) {
-    // this.user = this.adalService.getUser();
+    this.user = this.adalService.getUser();
+    
   }
 
 
@@ -20,22 +22,19 @@ export class ToolbarComponent implements OnInit {
 
     this.adalService.handleWindowCallback();
   }
-
-  get user12() {
-    let userData: adal.User;
-    this.adalService.getUser().subscribe(user => userData = user);
-    console.log(userData);
-    return userData.profile.name.match(/\b(\w)/g).join('');
+  getInitials(name) {
+    return name.match(/\b(\w)/g).join('');
   }
 
   logout() {
     this.adalService.logOut();
   }
+  toggleModal(){
+    this.modalVisible = !this.modalVisible;
+  }
 
   get authenticated(): boolean {
-    if (this.adalService.userInfo.authenticated ) {
-      this.router.navigate(['home']);
-    }
+
     return this.adalService.userInfo.authenticated;
   }
 }

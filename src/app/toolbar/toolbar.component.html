@@ -1,11 +1,37 @@
-
-<mat-toolbar color="primary">
-    <mat-toolbar-row>
-        <span>ADAL Example for Angular 6</span>
-        <div *ngIf="authenticated" (click)="logout()" >
-            <div class="circle-with-text">{{ user.profile.name | async}}</div>
-            <button mat-raised-button>Logout</button>
+<mat-toolbar class="toolbar">
+  <mat-toolbar-row>
+    <span>ADAL Example for Angular 6</span>
+    <button class="menu" (click)="toggleModal()">
+      <div *ngIf="authenticated">
+        <div class="circle-with-text">
+          <div class="initials">
+            {{ getInitials((user | async).profile.name)}}
           </div>
-    </mat-toolbar-row>
-    
+        </div>
+        <span>
+          <i class="material-icons">
+            arrow_drop_down
+          </i>
+        </span>
+      </div>
+    </button>
+    <div class="overlay" *ngIf="modalVisible" (click)="toggleModal()"></div>
+    <div class="user-modal" *ngIf="modalVisible">
+      <div class="menuaccountheader" style="background-color: rgba(255, 255, 255, 0); position: relative; height: 89px; width: 265px; box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px;">
+        <div class="avataraccount" style="background-color: rgba(255, 255, 255, 0); top: 21px; height: 48px; width: 48px; position: absolute; left: 18px;">
+          <div class="avataraccount1" style="background: rgb(38, 192, 161) none repeat scroll 0% 0%; top: 0px; height: 48px; width: 48px; position: relative; left: 0px; border-radius: 50%;">
+            <div class="ds" style="background-color: rgba(255, 255, 255, 0); top: 0px; width: 50px; position: absolute; left: -1px; font-family: &quot;Roboto&quot;, Helvetica, Arial, serif; font-weight: 300; font-style: normal; font-size: 16px; color: rgb(255, 255, 255); text-align: center; letter-spacing: 0.25px; line-height: 52px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">{{
+              getInitials((user | async).profile.name)}}</div>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: flex-start; flex-direction: column; align-items: flex-start; background-color: rgba(255, 255, 255, 0); top: 21px; width: 169px; position: absolute; left: 77px;">
+          <div style="background-color: rgba(255, 255, 255, 0); position: relative; margin: 7px 0px 7px; width: 170px; font-family: &quot;Roboto&quot;, Helvetica, Arial, serif; font-weight: 400; font-style: normal; font-size: 11px; color: rgb(74, 73, 74); text-align: left; letter-spacing: 0.5px; line-height: 13px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">anil.gangadharaiah@neudesic.com</div>
+          <div style="display: flex; justify-content: space-between; flex-direction: row; align-items: center;" >
+              <button mat-raised-button style="display: block;" (click)="logout()">Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-toolbar-row>
+
 </mat-toolbar>
